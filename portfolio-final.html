@@ -1,0 +1,949 @@
+---
+layout: single 
+permalink: /
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mohammed Tawshif Hossain — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7f9fb;
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --text-tertiary: #718096;
+    --accent: #2563eb;
+    --accent-hover: #1e40af;
+    --border: #e2e8f0;
+    --shadow: rgba(0, 0, 0, 0.08);
+    --max-width: 1100px;
+    
+    --font-serif: 'Lora', Georgia, serif;
+    --font-sans: 'Source Sans 3', -apple-system, sans-serif;
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --text-primary: #f7fafc;
+    --text-secondary: #e2e8f0;
+    --text-tertiary: #cbd5e0;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --border: #4a5568;
+    --shadow: rgba(0, 0, 0, 0.3);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--accent);
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--accent-hover);
+  }
+
+  /* HEADER */
+  header {
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 0 30px;
+    transition: background-color 0.3s ease;
+  }
+
+  .header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .affiliation {
+    font-size: 0.95rem;
+    color: var(--text-tertiary);
+    margin-bottom: 5px;
+  }
+
+  .theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+
+  .theme-toggle:hover {
+    background: var(--bg-secondary);
+    border-color: var(--accent);
+  }
+
+  /* NAVIGATION */
+  nav {
+    display: flex;
+    gap: 32px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+  }
+
+  .nav-link {
+    padding: 12px 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* MAIN CONTENT */
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  section:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* SECTION HEADERS */
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 900px;
+  }
+
+  /* ABOUT SECTION */
+  .about-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-text {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .about-text p {
+    margin-bottom: 16px;
+  }
+
+  .about-text a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  /* RESEARCH INTERESTS - CARD GRID */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    margin-top: 40px;
+  }
+
+  .research-card {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+  }
+
+  .research-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--shadow);
+  }
+
+  .research-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .research-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .research-content {
+    padding: 30px;
+  }
+
+  .research-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+
+  .research-content p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* RESEARCH EXPERIENCE - TIMELINE */
+  .experience-list {
+    margin-top: 30px;
+  }
+
+  .experience-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .experience-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .experience-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+  }
+
+  .experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .experience-details h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .experience-meta {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    margin-bottom: 12px;
+  }
+
+  .experience-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .experience-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+  }
+
+  /* PROJECTS SECTION */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    margin-top: 30px;
+  }
+
+  .project-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 30px;
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--shadow);
+    border-color: var(--accent);
+  }
+
+  .project-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .project-meta {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    margin-bottom: 12px;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* PUBLICATIONS */
+  .publications-list {
+    margin-top: 30px;
+  }
+
+  .publication-item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .publication-item:last-child {
+    border-bottom: none;
+  }
+
+  .publication-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .publication-authors {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+
+  .publication-venue {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+  }
+
+  /* CONTACT */
+  .contact-links {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+
+  /* FOOTER */
+  footer {
+    max-width: var(--max-width);
+    margin: 60px auto 0;
+    padding: 30px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .header-container,
+    main,
+    footer {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .about-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .profile-image {
+      margin: 0 auto;
+    }
+
+    .research-grid,
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .experience-item {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    nav {
+      overflow-x: auto;
+      gap: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <div class="header-top">
+      <div>
+        <h1>Mohammed Tawshif Hossain</h1>
+        <p class="subtitle">EEE Student & Researcher | Biomedical Engineering, Quantum Photonics, Computational Neuroscience</p>
+        <p class="affiliation">University Name, Department of Electrical and Electronic Engineering</p>
+        <p class="affiliation">tawsifturjoeee@gmail.com</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+    </div>
+
+    <nav>
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#research-interests" class="nav-link">Research Interests</a>
+      <a href="#research-experience" class="nav-link">Research Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#publications" class="nav-link">Publications</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2 class="section-title">About</h2>
+    
+    <div class="about-content">
+      <div class="profile-image">
+        <!-- <img src="/images/profile.jpg" alt="Mohammed Tawshif Hossain"> -->
+        🎓
+      </div>
+      
+      <div class="about-text">
+        <p>
+          I am an undergraduate student in Electrical and Electronic Engineering, working at the intersection of 
+          <a href="#research-interests">Biomedical Engineering</a>, <a href="#research-interests">Quantum Photonics</a>, 
+          and <a href="#research-interests">Computational Neuroscience</a>. My research is interdisciplinary, investigating 
+          both fundamental principles and applied implementations of physics involving quantum optics, nanophotonics, 
+          and neural signal processing.
+        </p>
+        <p>
+          Broadly, my research is concerned with understanding and developing scalable, chip-integrated photonic quantum 
+          technologies for use in medical diagnostics and quantum information processing. My work is primarily experimental 
+          and computational, where day-to-day I am involved with simulation development, biomedical signal analysis using 
+          machine learning, and photonic device design.
+        </p>
+        <p>
+          Prior to focusing on quantum photonics, I completed several research projects in biomedical signal processing, 
+          including EEG-based memory decoding and emotion recognition, which were published in peer-reviewed venues. 
+          My undergraduate research experience has focused on bridging the gap between theoretical physics and practical 
+          healthcare applications.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH INTERESTS SECTION -->
+  <section id="research-interests">
+    <h2 class="section-title">Research Interests</h2>
+    <p class="section-intro">
+      My research spans several interconnected areas in quantum physics and biomedical engineering, 
+      with applications in quantum information science, medical diagnostics, and neural decoding.
+    </p>
+    
+    <div class="research-grid">
+      <!-- Interest 1 -->
+      <div class="research-card">
+        <div class="research-image">
+          <img src="/images/quantum-optics.jpg" alt="Multimode Quantum Optics" onerror="this.style.display='none'">
+        </div>
+        <div class="research-content">
+          <h3>Quantum Photonics</h3>
+          <p>
+            Investigation of quantum phenomena in photonic systems, exploring the quantum nature of light 
+            in integrated photonic circuits. Rather than attempting to eliminate losses, I am developing 
+            techniques to harness quantum properties for scalable quantum computing and long-distance 
+            quantum communication applications.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interest 2 -->
+      <div class="research-card">
+        <div class="research-image">
+          <img src="/images/nanophotonics.jpg" alt="Nanophotonics" onerror="this.style.display='none'">
+        </div>
+        <div class="research-content">
+          <h3>Nanophotonics</h3>
+          <p>
+            Exploring how light behaves and propagates within materials at the nanoscale. My research 
+            involves designing, simulating, fabricating and characterizing nanophotonic devices including 
+            metasurfaces, optical tweezers, and integrated waveguide systems for sensing and manipulation 
+            applications.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interest 3 -->
+      <div class="research-card">
+        <div class="research-image">
+          <img src="/images/computational-neuroscience.jpg" alt="Computational Neuroscience" onerror="this.style.display='none'">
+        </div>
+        <div class="research-content">
+          <h3>Computational Neuroscience</h3>
+          <p>
+            Decoding neural signals using advanced signal processing and machine learning techniques. 
+            My work focuses on understanding cognitive states through EEG analysis, developing explainable 
+            AI frameworks for interpreting brain activity, and building brain-computer interface systems 
+            for medical applications.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interest 4 -->
+      <div class="research-card">
+        <div class="research-image">
+          <img src="/images/biomedical-optics.jpg" alt="Biomedical Optics" onerror="this.style.display='none'">
+        </div>
+        <div class="research-content">
+          <h3>Biomedical Optics</h3>
+          <p>
+            Application of optical techniques for medical diagnostics and therapeutic interventions at 
+            the cellular level. This includes developing optical imaging systems, studying light-tissue 
+            interactions, and creating photonic biosensors for disease detection and monitoring.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH EXPERIENCE SECTION -->
+  <section id="research-experience">
+    <h2 class="section-title">Research Experience</h2>
+    
+    <div class="experience-list">
+      <!-- Current Research 1 -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img src="/images/optical-tweezing.jpg" alt="Optical Tweezing" onerror="this.style.display='none'">
+        </div>
+        <div class="experience-details">
+          <h3>Tunable On-Chip Optical Tweezing</h3>
+          <p class="experience-meta">Undergraduate Thesis • 2024 – Present</p>
+          <p class="experience-description">
+            Design and simulation of active metasurfaces for dynamic optical trapping and manipulation 
+            of nanoparticles on a silicon-on-insulator platform. Investigating tunable optical forces 
+            for lab-on-a-chip applications with applications in cellular manipulation and single-molecule 
+            studies.
+          </p>
+          <div class="experience-tags">
+            <span class="tag">Nanophotonics</span>
+            <span class="tag">Metasurfaces</span>
+            <span class="tag">COMSOL</span>
+            <span class="tag">In Progress</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Research 2 -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img src="/images/quantum-photonics.jpg" alt="Quantum Photonics" onerror="this.style.display='none'">
+        </div>
+        <div class="experience-details">
+          <h3>Quantum Photonic Circuit Design</h3>
+          <p class="experience-meta">Research Project • 2024 – Present</p>
+          <p class="experience-description">
+            Investigating scalable photonic integrated circuits for quantum information processing and 
+            entanglement generation using silicon photonics platform. Focus on developing practical 
+            quantum computing architectures with reduced decoherence and high fidelity operations.
+          </p>
+          <div class="experience-tags">
+            <span class="tag">Quantum Computing</span>
+            <span class="tag">Photonic Circuits</span>
+            <span class="tag">In Progress</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Published Research 1 -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img src="/images/favicon-512x512.png" alt="Memory Decoding" onerror="this.style.display='none'">
+        </div>
+        <div class="experience-details">
+          <h3>Decoding Memory with Explainable AI</h3>
+          <p class="experience-meta">Journal Article • 2025</p>
+          <p class="experience-description">
+            Large-scale EEG study using SHAP values to interpret machine learning models distinguishing 
+            memory states. Developed explainable AI framework for understanding neural correlates of 
+            memory encoding and retrieval processes across multiple cognitive tasks.
+          </p>
+          <div class="experience-tags">
+            <span class="tag">EEG</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">SHAP</span>
+            <span class="tag">Published</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Published Research 2 -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img src="/images/emotion_detection_thumbnail.jpg" alt="Emotion Detection" onerror="this.style.display='none'">
+        </div>
+        <div class="experience-details">
+          <h3>Spectrogram-Driven Emotion Detection</h3>
+          <p class="experience-meta">Conference Paper – ECCE 2025 • 2025</p>
+          <p class="experience-description">
+            CNN architectures on EEG spectrograms for emotion classification. Achieved state-of-the-art 
+            performance in multi-class emotion recognition using time-frequency representations of neural 
+            signals with various deep learning architectures.
+          </p>
+          <div class="experience-tags">
+            <span class="tag">Deep Learning</span>
+            <span class="tag">CNN</span>
+            <span class="tag">Affective Computing</span>
+            <span class="tag">Published</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Past Work 1 -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img src="/images/metamaterial-absorber.jpg" alt="Metamaterial" onerror="this.style.display='none'">
+        </div>
+        <div class="experience-details">
+          <h3>Metamaterial Absorber Design</h3>
+          <p class="experience-meta">Course Project • 2024</p>
+          <p class="experience-description">
+            Computational design of frequency-selective metamaterial absorbers for EMI shielding applications. 
+            Simulated and optimized unit cell geometries for broadband absorption in microwave frequencies 
+            using finite element methods.
+          </p>
+          <div class="experience-tags">
+            <span class="tag">Metamaterials</span>
+            <span class="tag">EM Simulation</span>
+            <span class="tag">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Past Work 2 -->
+      <div class="experience-item">
+        <div class="experience-image">
+          <img src="/images/biomedical-signal.jpg" alt="Signal Processing" onerror="this.style.display='none'">
+        </div>
+        <div class="experience-details">
+          <h3>Biomedical Signal Processing</h3>
+          <p class="experience-meta">Research Project • 2023</p>
+          <p class="experience-description">
+            Analysis of ECG and EMG signals using wavelet transforms for arrhythmia detection. Implemented 
+            various signal processing algorithms for noise reduction, feature extraction, and automated 
+            classification of cardiac abnormalities.
+          </p>
+          <div class="experience-tags">
+            <span class="tag">Signal Processing</span>
+            <span class="tag">Wavelets</span>
+            <span class="tag">Completed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-intro">
+      Technical projects and implementations spanning various domains of electrical engineering and computer science.
+    </p>
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Neural Network from Scratch</h3>
+        <p class="project-meta">Machine Learning • 2023</p>
+        <p class="project-description">
+          Implemented feedforward and convolutional neural networks from scratch using NumPy for 
+          image classification tasks. Includes backpropagation, various optimization algorithms, 
+          and regularization techniques.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>IoT Health Monitoring System</h3>
+        <p class="project-meta">Embedded Systems & IoT • 2023</p>
+        <p class="project-description">
+          Developed a real-time vital signs monitoring system using Arduino and cloud integration. 
+          Measures heart rate, SpO2, and temperature with remote alerting capabilities for 
+          patient monitoring applications.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Photonic Device Simulator</h3>
+        <p class="project-meta">Computational Physics • 2024</p>
+        <p class="project-description">
+          Built a Python-based simulator for analyzing light propagation in photonic structures 
+          using FDTD methods. Used for rapid prototyping of waveguide designs and optical resonator 
+          optimization.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Brain-Computer Interface Prototype</h3>
+        <p class="project-meta">Neurotechnology • 2024</p>
+        <p class="project-description">
+          Created a BCI system for motor imagery classification using EEG signals. Implemented 
+          real-time signal processing pipeline with machine learning models for controlling 
+          external devices through thought.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS SECTION -->
+  <section id="publications">
+    <h2 class="section-title">Publications</h2>
+    
+    <div class="publications-list">
+      <div class="publication-item">
+        <div class="publication-title">
+          Decoding Memory States Using Explainable AI: A Large-Scale EEG Study with SHAP Analysis
+        </div>
+        <div class="publication-authors">
+          M. T. Hossain, et al.
+        </div>
+        <div class="publication-venue">
+          Journal of Neural Engineering, 2025
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-title">
+          Spectrogram-Based Emotion Recognition from EEG Signals Using Convolutional Neural Networks
+        </div>
+        <div class="publication-authors">
+          M. T. Hossain, et al.
+        </div>
+        <div class="publication-venue">
+          2025 International Conference on Electrical, Computer and Communication Engineering (ECCE)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    
+    <div class="contact-links">
+      <div class="contact-link">
+        <span>📧</span>
+        <a href="mailto:tawsifturjoeee@gmail.com">tawsifturjoeee@gmail.com</a>
+      </div>
+      <div class="contact-link">
+        <span>💼</span>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      </div>
+      <div class="contact-link">
+        <span>💻</span>
+        <a href="https://github.com/tawsifturjo" target="_blank">GitHub</a>
+      </div>
+      <div class="contact-link">
+        <span>📚</span>
+        <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-text">© 2025 Mohammed Tawshif Hossain. Last updated March 2025.</p>
+</footer>
+
+<script>
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+const currentTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', currentTheme);
+themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+themeToggle.addEventListener('click', () => {
+  const theme = html.getAttribute('data-theme');
+  const newTheme = theme === 'light' ? 'dark' : 'light';
+  
+  html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+});
+
+// Active Navigation Link on Scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function updateActiveLink() {
+  let current = '';
+  const scrollPosition = window.pageYOffset + 100;
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      current = section.getAttribute('id');
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', updateActiveLink);
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 20,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
